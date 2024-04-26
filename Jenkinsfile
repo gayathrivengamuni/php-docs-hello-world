@@ -16,7 +16,7 @@ pipeline {
             sh 'composer install'
         }
     }
-}
+
 stage('Run tests') {
     steps {
         script {
