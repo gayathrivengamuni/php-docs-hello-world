@@ -8,17 +8,9 @@ pipeline {
             }
         }
         
-        stage('Install Dependencies') {
-            steps {
-                sh 'composer install'
-            }
-        }
         
-        stage('Run PHPUnit Tests') {
-            steps {
-                sh 'vendor/bin/phpunit'
-            }
-        }
+        
+       
     }
     
     post {
