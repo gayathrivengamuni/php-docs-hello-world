@@ -28,4 +28,5 @@ stage('Run tests') {
     }
 }
     }
+}
 
