@@ -13,7 +13,7 @@ pipeline {
             if (!sh(script: 'command -v composer', returnStatus: true)) {
                 error 'Composer is not installed. Please install Composer.'
             }
-            sh 'composer install'
+            sh 'install composer'
         }
     }
     }
