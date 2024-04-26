@@ -11,7 +11,7 @@ pipeline {
     steps {
         script {
             if (!sh(script: 'command -v composer', returnStatus: true)) {
-                error 'Composer is not installed. Please install Composer.'
+                
             }
             sh 'install composer'
         }
