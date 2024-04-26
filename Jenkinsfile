@@ -7,16 +7,27 @@ pipeline {
                 git url: 'https://github.com/gayathrivengamuni/php-docs-hello-world.git'
             }
         }
-        stage('Install dependencies') {
-            steps {
-                sh 'composer install' // Assuming you're using Composer for dependency management
+        
+            
+    stage('Install dependencies') {
+    steps {
+        script {
+            if (!sh(script: 'command -v composer', returnStatus: true)) {
+                error 'Composer is not installed. Please install Composer.'
             }
+            sh 'composer install'
         }
-        stage('Run tests') {
-            steps {
-                sh 'phpunit' // Assuming you're using PHPUnit for testing
-            }
-        }
-        // Add more stages as needed
     }
 }
+stage('Run tests') {
+    steps {
+        script {
+            if (!sh(script: 'command -v phpunit', returnStatus: true)) {
+                error 'PHPUnit is not installed. Please install PHPUnit.'
+            }
+            sh 'phpunit'
+        }
+    }
+}
+
+
