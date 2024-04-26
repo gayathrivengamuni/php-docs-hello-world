@@ -6,9 +6,7 @@ pipeline {
             steps {
                 git url: 'https://github.com/gayathrivengamuni/php-docs-hello-world.git'
             }
-        }
-        
-            
+        }     
     stage('Install dependencies') {
     steps {
         script {
